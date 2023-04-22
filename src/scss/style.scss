@@ -1,17 +1,224 @@
 $bgColor: #24292e;
 $text: #fff;
 
-@font-face {
-  font-family: 'Comic';
-  src: url('../fonts/comic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
+
+@import url('https://fonts.cdnfonts.com/css/made-outer-sans-alt');
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+input,button{
+  outline: none;
+  border: none; 
+}
+body {
+width: 10vw;
+height: 100vh;
+background-color: #000; 
+display: block;
+padding: 20px;
+}
+header{
+  width: 100vw;
+  height: 54px;
+  /* border: 1px solid #fff; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  overflow: hidden;
+
+}
+.search{
+  width: 80vw;
+  margin: 0 auto;
+  height: 50px;
+  /* border: 1px solid #fff; */
+  display: flex;
+  position: absolute;
+  z-index: 1;
+}
+header.active::before{
+  content: "";
+  position: relative;
+  width: 300px;
+  height: 50%;
+  background: linear-gradient(45deg,#26fb00,#8f8fc3,#ff0000,#4c03f6,#00ff22,#4f00fb,#00ff2a,#00ff00,#5d5d19,#b21414);
+  animation: 4s lazer;
+  filter: blur(20px);
+ 
+
+}
+@keyframes lazer {
+  0%{
+    transform: rotate(0deg);
+  }
+  25%{
+    transform: rotate(90deg);
+  }
+  75%{
+    transform: rotate(270deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
 }
 
-body {
-  padding: 1rem;
-  margin: 0;
-  font-family: Comic, sans-serif;
-  background-color: $bgColor;
-  color: $text;
+.search__input{
+  height: 50px;
+  font-size: 30px;
+  background-color: #000;
+  color: #b67dbc;
+  text-align: center;
+  width: 100%;
+  font-family: 'MADE Outer Sans Alt';
+  
+}
+.search__input::placeholder{
+  color: #fff;
+  text-align: center;
+  font-family: 'MADE Outer Sans Outline';
+}
+.search__button{
+  position: relative;
+  width: 50%;
+  height: 100%;
+  border-radius: 0px 12px;
+  background: #000;
+  border: 1px solid #fff;
+  font-family: 'MADE Outer Sans Alt';
+  font-size: 1.5em;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+.search__button:hover,.search__button:focus{
+  background-color: #b67dbc;
+  color:#000;
+  transition: 0.3s ease-in-out;
+  border:none;
+  border-radius: 12px 0px 12px 0px;
+
+  box-shadow: 0 4px 15px 0 #b892bc opacity 0.5;
+  z-index: 1;
+}
+.output{
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  height: auto;
+  justify-content: space-between;
+  display: inline-flex;
+ flex-wrap: wrap;
+}
+.padding--box{
+width: 90vw;
+height: auto;
+display: inline-flex;
+margin-top: 50px;
+
+}
+h4{
+  color: #b67dbc;  
+  font-family: 'MADE Outer Sans Outline Alt';
+  font-size: 1.5rem;
+}
+
+.total__box{
+  width: auto;
+  height: auto;
+  border: 2px solid #fff;
+  border-radius: 15px;
+  padding: 10px;
+  margin-top: 10px;
+  animation: 2s spoil ease-in-out;
+}
+.total__box:nth-child(1){
+  width: auto;
+  animation: 0.5s spoil ease-in-out;
+  
+}
+.total__box:nth-child(2){
+  width: 50%;
+  animation: 0.6s spoil ease-in-out;
+}
+.total__box:nth-child(3){
+  animation: 0.7s spoil ease-in-out;
+}
+.total__box:nth-child(4){
+  animation: 0.8s spoil ease-in-out;
+}
+.total__box:nth-child(5){
+  animation: 0.9s spoil ease-in-out;
+}
+
+.total__box:nth-child(6){
+  animation: 1s spoil ease-in-out;
+}
+.total__box:nth-child(7){
+  animation: 1.1s spoil ease-in-out;
+}
+.total__box:nth-child(8){
+  animation: 1.2s spoil ease-in-out;
+}
+.total__box:nth-child(9){
+  animation: 1.3s spoil ease-in-out;
+}
+.total__box:nth-child(10){
+  animation: 1.5s spoil ease-in-out;
+}
+.total__box:nth-child(11){
+  animation: 1.5s spoil ease-in-out;
+}
+
+
+
+
+
+span{
+  color:#fff;
+  font-family: 'MADE Outer Sans Alt';
+  font-size: 14px;
+}
+#result{
+  color: #51ff00;  
+}
+
+@keyframes spoil {
+  0%{
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@media screen and (max-width:850px) {
+  .search__button{
+    font-size: 15px;
+  }
+  .search__input{
+    font-size: 15px;
+  }
+  header.active::before{
+    content: "";
+    position: relative;
+    width: 200px;
+    height: 20%;
+    filter: blur(10px);
+  }
+  header{
+    margin-top: 170px;
+  }
+  .logo{
+    left: 20px;
+  }
+}
+.logo{
+  max-width: 300px;
+  height: auto;
+  position: absolute;
+  top: -50px;
 }

@@ -13,6 +13,9 @@ input,button{
   outline: none;
   border: none; 
 }
+body::-webkit-scrollbar { 
+	display: none; 
+} 
 body {
 width: 10vw;
 height: 100vh;
@@ -133,6 +136,12 @@ h4{
   padding: 10px;
   margin-top: 10px;
   animation: 2s spoil ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  &:hover{
+    transform: scale(1.05);
+
+  }
+
 }
 .total__box:nth-child(1){
   width: auto;
